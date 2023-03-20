@@ -68,6 +68,7 @@ Next, initiate a perpetual (non-stop) "ping" (ping <IP address> -t) from V1M to 
 </p>
 
 <br />
+
 You will now change the Firewall settings of VM2 to stop the passing of ICMP traffic: in the Azure portal, search for "network security groups" and click the one for VM2 > click "Inbound security rules" under Settings on the left panel > click Add > select ICMP for Protocol > select Deny for Action > give the rule any name, such as "Deny_ICMP" > Add    
 
 <br />
