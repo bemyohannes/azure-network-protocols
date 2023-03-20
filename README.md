@@ -28,7 +28,7 @@ Hello and welcome! In this tutorial, we observe various network traffic to and f
 
 <h2>Actions and Observations</h2>
 
-For this tutorial you will need to create two virtual machines (VM) in the Azure portal, one with a Windows 10 server (VM1) and the other with a Linux (Ubuntu) server (VM2). Make sure you select either (2) or (4) virtual cpu's (VCPUs) for size. Next, remote desktop (RDC) into the Windows VM and download and install the program Wireshark.    
+For this tutorial you will need to create a resource group and two virtual machines (VM) in the Azure portal, one VM with a Windows 10 server (VM1) and the other VM with a Linux (Ubuntu) server (VM2). Make sure you select either (2) or (4) virtual cpu's (VCPUs) for size. Next, remote desktop (RDC) into the Windows VM and download and install the program Wireshark.    
 
 <p>
 <img src="https://i.imgur.com/GHzjkqF.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
@@ -130,4 +130,8 @@ In Wireshark, follow same steps from above and filter "tcp.port == 3389." Observ
 </p>
 
 <h3>Cleanup</h3>
+
+You can close your Remote Desktop connection and delete the Resource Group created at the beginning of this tutorial. Verify Resource Group deletion.
+
+This concludes the tutorial. Congrats!
 
