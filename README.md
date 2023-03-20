@@ -55,6 +55,7 @@ From the Azure portal, copy the private IP address of the Ubuntu VM. Go back to 
 <p>
 <img src="https://i.imgur.com/n19x6cO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+<br />
 
 Next, initiate a perpetual (non-stop) "ping" (ping <IP address> -t) from V1M to VM2.
 
@@ -62,6 +63,7 @@ Next, initiate a perpetual (non-stop) "ping" (ping <IP address> -t) from V1M to 
 <img src="https://i.imgur.com/r0eRDhl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 
+<br />
 You will now change the Firewall settings of VM2 to stop the passing of ICMP traffic: in the Azure portal, search for "network security groups" and click the one for VM2 > click "Inbound security rules" under Settings on the left panel > click Add > select ICMP for Protocol > select Deny for Action > give the rule any name, such as "Deny_ICMP" > Add    
 
 <p>
@@ -76,6 +78,7 @@ Observe the activity in Powershell and notice that the ping request begins to fa
 <img src="https://i.imgur.com/kG2TEJO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 
+  <br />
 Now, go back to Azure portal and enable ICMP traffic in the rule you created. Notice the ping request begins to succeed and receive a reply in Powershell. You can then stop the ping by typing control (C) in Powershell.  
 
 <p>
@@ -93,6 +96,7 @@ In Wireshark, filter for SSH traffic by typing "ssh" in the filter bar and click
 <img src="https://i.imgur.com/Eg9bYIy.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 
+ <br />
 You will now "SSH into" VM2 from VM1 (within RDC) by typing "ssh," the username from VM2 setup and the private IP address of VM2 in Powershell. Answer "yes" for question at the bottom to continue connecting and enter the password created during VM2 setup when prompted (it will not be visible). Notice username in green at bottom, which means connection to VM2 is established. Notice the SSH traffic in Wireshark. You can now close the VM2 connection by typing "exit" and pressing "enter."   
 
 <p>
