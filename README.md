@@ -71,6 +71,7 @@ Next, initiate a perpetual (non-stop) "ping" (ping <IP address> -t) from V1M to 
 You will now change the Firewall settings of VM2 to stop the passing of ICMP traffic: in the Azure portal, search for "network security groups" and click the one for VM2 > click "Inbound security rules" under Settings on the left panel > click Add > select ICMP for Protocol > select Deny for Action > give the rule any name, such as "Deny_ICMP" > Add    
 
 <br />
+
 <p>
 <img src="https://i.imgur.com/56ZuMDB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -84,7 +85,8 @@ Observe the activity in Powershell and notice that the ping request begins to fa
 <img src="https://i.imgur.com/kG2TEJO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 
-  <br />
+<br />
+
 Now, go back to Azure portal and enable ICMP traffic in the rule you created. Notice the ping request begins to succeed and receive a reply in Powershell. You can then stop the ping by typing control (C) in Powershell.  
 
 <br />
@@ -108,6 +110,7 @@ In Wireshark, filter for SSH traffic by typing "ssh" in the filter bar and click
 </p>
 
 <br />
+
 You will now "SSH into" VM2 from VM1 (within RDC) by typing "ssh," the username from VM2 setup and the private IP address of VM2 in Powershell. Answer "yes" for question at the bottom to continue connecting and enter the password created during VM2 setup when prompted (it will not be visible). Notice username in green at bottom, which means connection to VM2 is established. Notice the SSH traffic in Wireshark. You can now close the VM2 connection by typing "exit" and pressing "enter."   
 
 <br />
@@ -123,6 +126,7 @@ Dynamic Host Configuration Protocol (DHCP) is the protocol that provides a devic
 In Wireshark, filter for DHCP traffic using same steps from above and attempt to renew the IP address of VM1 within RDC by typing "ipconfig /renew" in Powershell. Notice the DHCP traffic in Wireshark. 
 
 <br />
+
 <p>
 <img src="https://i.imgur.com/43vRDUd.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -134,6 +138,7 @@ Domain Name System is the protocol used by the command-line "nslookup" to retrie
 From VM1 in RDC, filter for DNS traffic in Wireshark using steps from above and in Powershell type the command-line "nslookup www.google.com" to retrieve the IP address of google.com. Notice Google's addresses and the DNS traffic in Wireshark.  
 
 <br />
+
 <p>
 <img src="https://i.imgur.com/LSnCgoT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -145,6 +150,7 @@ Remote Desktop Protocol uses "port number" 3389 and is used when remotely connec
 In Wireshark, follow same steps from above and filter "tcp.port == 3389." Observe the streaming traffic of "packets" between your actual computer and VM1, which you are accessing via RDP.
 
 <br />
+
 <p>
 <img src="https://i.imgur.com/2BGLstI.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
